@@ -1,1 +1,6 @@
-# frontend
+# FRONTEND PARA PROYECTO FULLSTACK
+
+AUTOR: Victor Aldemar Torres R
+
+ANGULAR
+
