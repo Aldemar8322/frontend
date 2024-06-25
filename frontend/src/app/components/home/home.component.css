@@ -1,0 +1,35 @@
+.borde{
+    border: 2px solid brown;
+}
+.parrafo{
+    display: flex;
+    border-radius: 10%;
+    border: 2px solid white;
+    background-color: #bb3e03;
+    justify-content: center;
+    text-align: center;
+    justify-items: center;
+    align-content: center;
+    color: white;
+    margin: 5px;
+    padding: 5px;
+    font-family:cursive;
+    font-size: 20px;
+}
+.caja1 {
+    display: flex;
+    height: 300px;
+    width: 400px;
+    align-items: center;
+    justify-content: center;
+
+}
+.cuadro {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    width: 100%;
+    gap: 10px;
+}
+
+

@@ -1,1 +1,113 @@
-<p>Hola, {{nombre}}!</p>
+@if (caps.length > 0) {
+  <div class="card-group">
+    @for (cap of caps; track $index) {
+    <div class="card" style="width: 18rem">
+      <img
+        src="http://localhost:3000/imagenes/{{ cap.imagen }}"
+        class="card-img-top"
+        alt="imagen de una {{ cap.nombre }} {{ cap.color }}"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ cap.nombre }} {{ cap.color }}</h5>
+        <div
+          class="btn-group"
+          role="group"
+          aria-label="Basic mixed styles example"
+        >
+          <button type="button" class="btn btn-info" (click)="handleInfo()">
+            Info
+          </button>
+          <button type="button" class="btn btn-warning" (click)="handleUpdate()">
+            Update
+          </button>
+          <button
+            type="button"
+            class="btn btn-danger"
+            (click)="handleDelete(cap._id)"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+  }@else{
+  <p>no existen gorras para mostrar</p>
+  }
+  <hr />
+  <div class="d-lg-flex justify-content-center">
+    <form (ngSubmit)="handleSubmit()" class="py-5 col-lg-6">
+      <div class="mb-3">
+        <label for="inputName" class="form-label">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputName"
+          aria-describedby="nameHelp"
+          name="nombre"
+          [(ngModel)]="nombre"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="inputColor" class="form-label">Color</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputColor"
+          aria-describedby="colorHelp"
+          name="color"
+          [(ngModel)]="color"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="inputSize" class="form-label">Size</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputSize"
+          aria-describedby="sizeHelp"
+          name="talla"
+          [(ngModel)]="talla"
+        />
+      </div>
+      <div class="mb-3">
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="inputAvailable"
+            aria-describedby="availableHelp"
+            name="disponible"
+            [(ngModel)]="disponible"
+          />
+          <label class="form-check-label" for="inputAvailable">Available</label>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="inputAmount" class="form-label">Amount</label>
+        <input
+          type="number"
+          class="form-control"
+          id="inputAmount"
+          aria-describedby="amountHelp"
+          name="existencias"
+          [(ngModel)]="existencias"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="inputImage" class="form-label">Image</label>
+        <input
+          type="file"
+          class="form-control"
+          id="inputImage"
+          aria-describedby="imageHelp"
+          (change)="inputFile($event)"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary bg-my-color col-12">
+        Create Cap
+      </button>
+    </form>
+  </div>

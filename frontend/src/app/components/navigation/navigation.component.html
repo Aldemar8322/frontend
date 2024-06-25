@@ -1,9 +1,32 @@
-<nav>
-  <div class="menu">
-    <a routerLink="home">Inicio</a>
-    <br>
-    <a routerLink="login">Ingreso</a>
-    <br>
-    <a routerLink="shop">Socios</a>
+<nav class="navbar navbar-expand-lg bg-my-color"data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Desayunos cartagena</a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a routerLink="home" class="nav-link">Inicio</a>
+        <a routerLink="shop" class="nav-link">Administrador</a>
+      </div>
+    </div>
   </div>
-  </nav>
+  <div class="pe-3 text-white">
+    @if (loginService.isLogin()) {
+    <button type="button" class="btn btn-link" (click)="loginService.logout()">
+      Logout
+    </button>
+    } @else {
+    <a routerLink="login" class="nav-link">Login</a>
+    }
+  </div>
+</nav>

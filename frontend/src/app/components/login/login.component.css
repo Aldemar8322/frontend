@@ -1,6 +1,9 @@
-.boton {
-    background-color: red;
-    color: white;
-
+.formulario {
+    display: grid;
+    grid-template-columns:auto;
+    grid-template-rows: 1fr, 4fr;
+    border: 1px solid black;
+    color: blue;
 }
+
 
